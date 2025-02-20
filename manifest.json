@@ -1,0 +1,18 @@
+{
+    "manifest_version": 2,
+    "name": "WaniKani to Anki",
+    "version": "1.0",
+    "description": "Extracts vocabulary from WaniKani and adds to Anki via AnkiConnect.",
+    "permissions": ["activeTab", "http://localhost:8765/", "webRequest", "webRequestBlocking"],
+    "background": {
+      "scripts": ["background.js"],
+      "persistent": false
+    },
+    "content_scripts": [
+      {
+        "matches": ["*://www.wanikani.com/*"],
+        "js": ["content.js"]
+      }
+    ]
+  }
+  
